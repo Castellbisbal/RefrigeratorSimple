@@ -10,11 +10,12 @@ namespace RefrigeratorSimple
     {
         static void Main(string[] args)
         {
+            Refrigerator fridge= new Refrigerator(true, true, false, false, true, -5, BrigthnessLevel.Normal);
             char KeyPressed;
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("Состояние холодильника... \n");
+                Console.WriteLine(fridge.Info()+" \n");
                 Console.WriteLine("Панель управления холодильником. Выберите пункт меню \n");
                 Console.WriteLine(" 1 - Включить холодильник");
                 Console.WriteLine(" 2 - Выключить холодильник");
@@ -38,32 +39,49 @@ namespace RefrigeratorSimple
                 switch (KeyPressed)
                 {
                     case '1':
+                        fridge.On();
                         break;
                     case '2':
+                        fridge.Off();
                         break;
                     case '3':
+                        fridge.Increase();
                         break;
                     case '4':
+                        fridge.Decrease();
                         break;
                     case '5':
+                        fridge.HightLightTurn();
                         break;
                     case '6':
+                        fridge.NormalLightTurn();
                         break;
                     case '7':
+                        fridge.LowLightTurn();
                         break;
                     case '8':
+                        fridge.FreezingOn();
                         break;
                     case '9':
+                        fridge.FreezingOff();
                         break;
                     case 'a':
+                        fridge.DefrostingOn();
                         break;
                     case 'b':
+                        fridge.DefrostingOff();
                         break;
                     case 'c':
+                        fridge.VacOn();
                         break;
                     case 'd':
+                        fridge.VacOff();
+                        break;
+                    case 'e':
+                        fridge.ProtectOn();
                         break;
                     case 'f':
+                        fridge.ProtectOff();
                         break;
                     case 'x':
                         return;
